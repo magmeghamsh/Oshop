@@ -1,0 +1,40 @@
+<h2>Orders Placed</h2>
+
+<table class="table"
+[mfData]="filteredOrders"
+#mf="mfDataTable"
+[mfRowsOnPage]="5">
+  <thead>
+    <tr>
+      <th class="text-left">
+        Invoice Number
+      </th>
+      <th class="text-center">
+        Date
+      </th>
+      <th class="text-center">
+        Number of Products
+      </th>
+      <th class="text-right">
+        View
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let o of mf.data">
+      <td class="text-left">{{ o.datePlaced }}</td>
+      <td class="text-center">{{ o.datePlaced | date }}</td>
+      <td class="text-center">{{ o.items.length }} Items</td>
+      <td class="text-right">
+        <a [routerLink]="['/view-order', o.key]">View</a>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">
+        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+      </td>
+    </tr>
+  </tfoot>
+</table>

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+$primary-color: darkred;
+$primary-bg-color: #1372d6;;
+
+body { padding-top: 80px; }
+
+ .navbar-light .navbar-brand {
+    color: $primary-color;
+}
+
+.list-group-item.active {
+    background-color: $primary-bg-color;
+    border-color: $primary-bg-color;
+}
